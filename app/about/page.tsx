@@ -7,7 +7,7 @@ import { useFlags } from "flagsmith/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Page() {
-  const flags = useFlags(["configure_card"], ["profession"]); // only causes re-render if specified flag values / traits change
+  const flags = useFlags(["configure_card"]); // only causes re-render if specified flag values / traits change
   return (
     <>
       <main className={styles.main}>

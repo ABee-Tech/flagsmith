@@ -3,7 +3,7 @@
 import { Jost } from "next/font/google";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-import flagsmith from "flagsmith/isomorphic";
+import { useFlagsmith } from "flagsmith/react";
 
 const jost = Jost({ subsets: ["latin"] });
 
@@ -13,6 +13,7 @@ export type User = {
 };
 
 export default function Page() {
+  const flagsmith = useFlagsmith();
   const [user, toggleUser] = useState<User>({
     name: "",
     position: "Freelancer",
