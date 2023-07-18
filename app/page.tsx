@@ -34,9 +34,9 @@ export default function Page() {
     });
   };
 
-  const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleOnSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    flagsmith.setTrait("profession", user.position); // setting the "profession" trait as the one selected by user
+    await flagsmith.setTrait("profession", user.position); // setting the "profession" trait as the one selected by user
     router.push("/about?name=" + user.name + "&position=" + user.position);
   };
 
